@@ -1,20 +1,21 @@
-const express = require("express");
-const cors = require("cors");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+module.exports = async (req, res) => {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,POST');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
-// Enable CORS and JSON parsing
-app.use(cors());
-app.use(express.json());
-app.use(express.static(".")); // Serve static files from current directory
+  // Handle OPTIONS request
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
 
-// Initialize Google Generative AI
-const genAI = new GoogleGenerativeAI("AIzaSyAOaM4w4LCzGELsLO4Vh4nXIs0HhoEQMLw");
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
-// Create API endpoint for chat
-app.post("/api/chat", async (req, res) => {
   try {
     const { message } = req.body;
     
@@ -22,6 +23,7 @@ app.post("/api/chat", async (req, res) => {
       return res.status(400).json({ error: "Message is required" });
     }
 
+    const genAI = new GoogleGenerativeAI("AIzaSyAOaM4w4LCzGELsLO4Vh4nXIs0HhoEQMLw");
     const generationConfig = {
       temperature: 0.2,  
       topK: 1,
@@ -29,7 +31,7 @@ app.post("/api/chat", async (req, res) => {
     };
     
     const model = genAI.getGenerativeModel({ 
-      model: "gemini-1.5-pro",
+      model: "gemini-1.5-flash",
       generationConfig,
       safetySettings: [
         {
@@ -62,9 +64,4 @@ app.post("/api/chat", async (req, res) => {
     console.error("Error:", error);
     res.status(500).json({ error: "Failed to process your request" });
   }
-});
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+};
