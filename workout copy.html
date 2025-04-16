@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Latihan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        background-color: #9dc2ff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'%3E%3Cpath fill='%233b82f6' fill-opacity='0.4' d='M192 15v2a11 11 0 0 0-11 11c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H145v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11 13 13 0 1 1 .02 26 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43a6.1 6.1 0 0 0-3.03 4.87V143h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 181 164a11 11 0 0 0 11 11v2a13 13 0 0 1-13-13 12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84a6.1 6.1 0 0 0-4.87-3.03H145v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 124 181a11 11 0 0 0-11 11h-2a13 13 0 0 1 13-13c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43a6.1 6.1 0 0 0 3.03-4.87V145h-35.02a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 107 124a11 11 0 0 0-22 0c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H49v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11A13 13 0 0 1 81 192h-2a11 11 0 0 0-11-11c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V145H11.98a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 0 1 0 177v-2a11 11 0 0 0 11-11c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H47v-35.02a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 28 109a13 13 0 1 1 0-26c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43A6.1 6.1 0 0 0 47 84.02V49H11.98a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 11 28 11 11 0 0 0 0 17v-2a13 13 0 0 1 13 13c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84A6.1 6.1 0 0 0 11.98 47H47V11.98a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 68 11 11 11 0 0 0 79 0h2a13 13 0 0 1-13 13 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43A6.1 6.1 0 0 0 49 11.98V47h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 85 68a11 11 0 0 0 22 0c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H143V11.98a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 124 13a13 13 0 0 1-13-13h2a11 11 0 0 0 11 11c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V47h35.02a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 179 28a13 13 0 0 1 13-13zM84.02 143a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 83 124a13 13 0 1 1 26 0c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84a6.1 6.1 0 0 0 4.87 3.03H143v-35.02a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 164 107a11 11 0 0 0 0-22c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V49h-35.02a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 1 1 83 68a12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84A6.1 6.1 0 0 0 84.02 49H49v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 28 85a11 11 0 0 0 0 22c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V143h35.02z'%3E%3C/path%3E%3C/svg%3E");
+      }
+  </style>
+</head>
+
+<body class="space-y-10">
+  <header class="gradient-bg text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-dumbbell text-2xl"></i>
+          <h1 class="text-2xl font-bold">GymPT</h1>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-blue-200 transition">Home</a>
+          <a href="workout.html" class="hover:text-blue-200 transition">Workouts</a>
+          <a href="nutrisi.html" class="hover:text-blue-200 transition">Nutrition</a>
+          <a href="alatgym.html" class="hover:text-blue-200 transition">Equipment</a>
+        </nav>
+        <button class="md:hidden">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- LEVEL 1 – PEMULA -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 mx-8">
+    <h2 class="text-2xl font-bold text-green-600 mb-2">🟢 LEVEL 1 – PEMULA (Beginner)</h2>
+    <p class="text-gray-600 mb-4">Durasi: 4–6 minggu<br />Fokus: Adaptasi tubuh, membentuk kebiasaan, teknik dasar</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 1: Full Body</h3>
+        <ul class="list-disc list-inside">
+          <li>Push-up (dengan lutut) – 3x10</li>
+          <li>Squat (berat badan) – 3x15</li>
+          <li>Plank – 3x20 detik</li>
+          <li>Dumbbell Row – 3x10 per sisi</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 2: Istirahat</h3>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 3: Kardio + Core</h3>
+        <ul class="list-disc list-inside">
+          <li>Jalan cepat/treadmill – 20 menit</li>
+          <li>Crunch – 3x15</li>
+          <li>Bicycle crunch – 3x15</li>
+          <li>Leg raise – 3x12</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 4: Istirahat</h3>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 5: Full Body 2</h3>
+        <ul class="list-disc list-inside">
+          <li>Dumbbell Chest Press – 3x10</li>
+          <li>Dumbbell Shoulder Press – 3x10</li>
+          <li>Lunges – 3x12 per kaki</li>
+          <li>Plank – 3x30 detik</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 6 & 7: Istirahat / Jalan santai</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 2 – MENENGAH -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 mx-8">
+    <h2 class="text-2xl font-bold text-yellow-500 mb-2">🟡 LEVEL 2 – MENENGAH (Intermediate)</h2>
+    <p class="text-gray-600 mb-4">Durasi: 4–6 minggu<br />Fokus: Peningkatan kekuatan dan daya tahan</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 1: Push Day (Dada, Bahu, Triceps)</h3>
+        <ul class="list-disc list-inside">
+          <li>Bench Press – 4x8</li>
+          <li>Shoulder Press – 3x10</li>
+          <li>Dumbbell Fly – 3x12</li>
+          <li>Triceps Dips – 3x12</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 2: Pull Day (Punggung, Biceps)</h3>
+        <ul class="list-disc list-inside">
+          <li>Lat Pulldown – 4x10</li>
+          <li>Seated Row – 3x12</li>
+          <li>Barbell Curl – 3x12</li>
+          <li>Hammer Curl – 3x10</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 3: Leg Day</h3>
+        <ul class="list-disc list-inside">
+          <li>Squat – 4x8</li>
+          <li>Leg Press – 3x12</li>
+          <li>Romanian Deadlift – 3x10</li>
+          <li>Calf Raise – 3x15</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 4: Istirahat Aktif (yoga/kardio ringan)</h3>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 5: Full Body</h3>
+        <ul class="list-disc list-inside">
+          <li>Deadlift – 4x6</li>
+          <li>Pull-up (dibantu kalau perlu) – 3x8</li>
+          <li>Dumbbell Lunge – 3x10 per kaki</li>
+          <li>Plank – 3x45 detik</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 6–7: Kardio opsional / Istirahat</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 3 – LANJUTAN -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 mx-8 mb-8">
+    <h2 class="text-2xl font-bold text-red-600 mb-2">🔴 LEVEL 3 – LANJUTAN (Advanced)</h2>
+    <p class="text-gray-600 mb-4">Durasi: Berkelanjutan<br />Fokus: Hypertrophy, kekuatan maksimal, estetika</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 1: Chest & Triceps</h3>
+        <ul class="list-disc list-inside">
+          <li>Barbell Bench Press – 5x5</li>
+          <li>Incline Dumbbell Press – 4x8</li>
+          <li>Chest Fly Machine – 3x12</li>
+          <li>Skull Crusher – 3x10</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 2: Back & Biceps</h3>
+        <ul class="list-disc list-inside">
+          <li>Deadlift – 5x5</li>
+          <li>Pull-up – 4x10</li>
+          <li>Barbell Row – 4x8</li>
+          <li>Concentration Curl – 3x10</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 3: Legs & Abs</h3>
+        <ul class="list-disc list-inside">
+          <li>Barbell Squat – 5x5</li>
+          <li>Leg Curl – 4x12</li>
+          <li>Walking Lunges – 3x20 langkah</li>
+          <li>Hanging Leg Raise – 3x15</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 4: Shoulders & Traps</h3>
+        <ul class="list-disc list-inside">
+          <li>Military Press – 4x8</li>
+          <li>Lateral Raise – 3x15</li>
+          <li>Front Raise – 3x12</li>
+          <li>Barbell Shrug – 4x10</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 5: Full Body Circuit</h3>
+        <ul class="list-disc list-inside">
+          <li>Kettlebell Swing – 3x20</li>
+          <li>Burpees – 3x15</li>
+          <li>Box Jump – 3x12</li>
+          <li>Russian Twist – 3x20</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 shadow">
+        <h3 class="font-semibold">Hari 6–7: Recovery / Aktif stretching</h3>
+      </div>
+    </div>
+  </div>
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-dumbbell text-2xl"></i>
+            <h2 class="text-xl font-bold">GymPT</h2>
+          </div>
+          <p class="text-gray-400 mt-2">Your AI fitness companion</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-400 text-sm">
+        <p>© 2025 GymPT. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
