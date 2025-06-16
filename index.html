@@ -268,15 +268,13 @@
         const userInput = document.getElementById("user-input");
         const chatContainer = document.getElementById("chat-container");
 
-        // Sample workout suggestions
         const workoutSuggestions = [
-          "Create a 30-minute full body workout",
-          "Best exercises for building chest muscles",
-          "How can I improve my squat form?",
-          "Suggest a beginner-friendly yoga routine",
+          "Buat program workout 30 hari untuk pemula",
+          "Latihan untuk membakar lemak",
+          "Bagaimana saya memperbaiki form deadlift?",
+          "Saran nutrisi murah untuk bulking",
         ];
 
-        // Display sample questions
         function displaySampleQuestions() {
           const sampleContainer = document.createElement("div");
           sampleContainer.className = "mt-4";
@@ -306,7 +304,6 @@
           chatContainer.scrollTop = chatContainer.scrollHeight;
         }
 
-        // Display typing indicator
         function showTypingIndicator() {
           const typingDiv = document.createElement("div");
           typingDiv.className = "mb-4 flex justify-start";
@@ -324,14 +321,12 @@
           return typingDiv;
         }
 
-        // Remove typing indicator
         function removeTypingIndicator(typingDiv) {
           if (typingDiv && typingDiv.parentNode) {
             typingDiv.parentNode.removeChild(typingDiv);
           }
         }
 
-        // Add message to chat
         function addMessage(content, isUser) {
           const messageDiv = document.createElement("div");
           messageDiv.className = `mb-4 flex ${
@@ -354,7 +349,6 @@
           chatContainer.scrollTop = chatContainer.scrollHeight;
         }
 
-        // Function to send message to API
         async function sendMessage(message) {
           try {
             const response = await fetch("/api/chat", {
@@ -383,11 +377,9 @@
 
           if (message === "") return;
 
-          // Add user message
           addMessage(message, true);
           userInput.value = "";
 
-          // Show typing indicator
           const typingIndicator = showTypingIndicator();
 
           try {
@@ -405,7 +397,6 @@
           }
         });
 
-        // Initialize the chat with sample questions
         displaySampleQuestions();
       });
     </script>

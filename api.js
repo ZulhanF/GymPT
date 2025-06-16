@@ -5,15 +5,12 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Enable CORS and JSON parsing
 app.use(cors());
 app.use(express.json());
-app.use(express.static(".")); // Serve static files from current directory
+app.use(express.static("."));
 
-// Initialize Google Generative AI
 const genAI = new GoogleGenerativeAI("AIzaSyAOaM4w4LCzGELsLO4Vh4nXIs0HhoEQMLw");
 
-// Create API endpoint for chat
 app.post("/api/chat", async (req, res) => {
   try {
     const { message } = req.body;
@@ -29,28 +26,16 @@ app.post("/api/chat", async (req, res) => {
     };
     
     const model = genAI.getGenerativeModel({ 
-      model: "gemini-1.5-pro",
-      generationConfig,
-      safetySettings: [
-        {
-          category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-          threshold: "BLOCK_LOW_AND_ABOVE"
-        }
-      ]
+      model: "gemini-2.0-flash",
+      generationConfig
     });
 
     const chat = model.startChat({
       history: [],
       generationConfig,
-      safetySettings: [
-        {
-          category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-          threshold: "BLOCK_LOW_AND_ABOVE"
-        }
-      ],
       systemInstruction: {
         role: "system",
-        parts: [{ text: "You are a professional fitness assistant. ONLY answer questions related to fitness, workouts, nutrition, and health. For ANY questions outside of these topics, respond ONLY with: 'Aku hanya bisa menjawab pertanyaan terkait GYM dan WORKOUT ya adick-adick. Please be smart.'" }]
+        parts: [{ text: "You are a professional fitness assistant. ONLY answer questions related to fitness, workouts, nutrition, and health. For ANY questions outside of these topics, respond ONLY with: 'Aku hanya bisa menjawab pertanyaan terkait GYM dan WORKOUT ya teman-teman.'" }]
       }
     });
 
@@ -64,7 +49,6 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
