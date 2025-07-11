@@ -43,7 +43,21 @@ exports.handler = async (event, context) => {
       };
     }
 
-    const genAI = new GoogleGenerativeAI("AIzaSyAOaM4w4LCzGELsLO4Vh4nXIs0HhoEQMLw");
+    // Get API key from environment variable, with fallback
+    const apiKey = process.env.GOOGLE_AI_API_KEY;
+    
+    if (!apiKey) {
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({ 
+          error: "API key not configured",
+          details: "Please set GOOGLE_AI_API_KEY environment variable" 
+        })
+      };
+    }
+
+    const genAI = new GoogleGenerativeAI(apiKey);
 
     const generationConfig = {
       temperature: 0.2,  
