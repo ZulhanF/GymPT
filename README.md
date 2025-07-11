@@ -15,7 +15,6 @@
 
 - 🤖 **AI Chat Assistant** - Get instant fitness advice and answers
 - 💪 **Personalized Workout Generator** - Custom workouts based on your goals
-- 🥗 **Nutrition Guidance** - Expert nutrition tips and meal planning
 - 🏋️ **Equipment Guide** - Learn about gym equipment and exercises
 - 📱 **Responsive Design** - Works perfectly on all devices
 - ⚡ **Real-time AI** - Powered by Google Gemini AI
