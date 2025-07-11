@@ -52,23 +52,6 @@
 - **Warm-up and cool-down routines**
 - **Safety tips and precautions**
 
-
-## 🎨 Design Features
-
-- **Modern bubble chat interface**
-- **Smooth animations and transitions**
-- **Responsive design for all devices**
-- **Beautiful gradients and shadows**
-- **Professional UI/UX**
-- **Accessibility-friendly**
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js (version 16 or higher)
-- npm or yarn
-- Google AI API key
-
 ### Installation
 
 1. **Clone the repository**
@@ -118,14 +101,6 @@ Input: Beginner, Strength Training, 45 minutes, Dumbbells, Muscle Gain
 Output: Detailed workout plan with exercises, sets, reps, and rest periods
 ```
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## 📝 License
 
 This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
@@ -136,13 +111,3 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 - **Tailwind CSS** for the beautiful styling framework
 - **Font Awesome** for the amazing icons
 - **Netlify** for the excellent hosting platform
-
-## 📞 Support
-
-If you have any questions or need help:
-
-- **Website:** [GymPT](https://gympt.netlify.app)
-- **Issues:** [GitHub Issues](https://github.com/yourusername/gympt/issues)
-- **Email:** zulhanfadil@gmail.com
-
----
