@@ -8,6 +8,9 @@
 </div>
 
 ## 🎯 Overview
+<img width="1892" height="1036" alt="image" src="https://github.com/user-attachments/assets/682704d1-3e02-4b73-86c5-f56f4f99d681" />
+<img width="1895" height="1039" alt="image" src="https://github.com/user-attachments/assets/663be36c-7630-4c03-8cd2-583a0022a792" />
+<img width="1892" height="1042" alt="image" src="https://github.com/user-attachments/assets/663a0ceb-cf16-4ef0-b5e8-f329d7bc4a83" />
 
 **GymPT** is a modern, AI-powered fitness platform that provides personalized workout plans, nutrition guidance, and real-time fitness assistance. Built with cutting-edge AI technology, it offers a comprehensive solution for fitness enthusiasts of all levels.
 
