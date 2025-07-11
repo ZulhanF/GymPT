@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Generator - GymPT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #9dc2ff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'%3E%3Cpath fill='%233b82f6' fill-opacity='0.4' d='M192 15v2a11 11 0 0 0-11 11c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H145v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11 13 13 0 1 1 .02 26 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43a6.1 6.1 0 0 0-3.03 4.87V143h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 181 164a11 11 0 0 0 11 11v2a13 13 0 0 1-13-13 12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84a6.1 6.1 0 0 0-4.87-3.03H145v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 124 181a11 11 0 0 0-11 11h-2a13 13 0 0 1 13-13c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43a6.1 6.1 0 0 0 3.03-4.87V145h-35.02a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 107 124a11 11 0 0 0-22 0c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H49v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11A13 13 0 0 1 81 192h-2a11 11 0 0 0-11-11c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V145H11.98a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 0 1 0 177v-2a11 11 0 0 0 11-11c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H47v-35.02a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 28 109a13 13 0 1 1 0-26c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43A6.1 6.1 0 0 0 47 84.02V49H11.98a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 11 28 11 11 0 0 0 0 17v-2a13 13 0 0 1 13 13c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84A6.1 6.1 0 0 0 11.98 47H47V11.98a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 68 11 11 11 0 0 0 79 0h2a13 13 0 0 1-13 13 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43A6.1 6.1 0 0 0 49 11.98V47h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 85 68a11 11 0 0 0 22 0c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H143V11.98a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 124 13a13 13 0 0 1-13-13h2a11 11 0 0 0 11 11c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V47h35.02a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 179 28a13 13 0 0 1 13-13zM84.02 143a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 83 124a13 13 0 1 1 26 0c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84a6.1 6.1 0 0 0 4.87 3.03H143v-35.02a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 164 107a11 11 0 0 0 0-22c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V49h-35.02a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 1 1 83 68a12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84A6.1 6.1 0 0 0 84.02 49H49v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 28 85a11 11 0 0 0 0 22c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V143h35.02z'%3E%3C/path%3E%3C/svg%3E");
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+        }
+
+        .workout-section {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background-color: #f8fafc;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .exercise-item:hover {
+            background-color: #f1f5f9;
+            transform: translateX(5px);
+        }
+
+        .exercise-item i {
+            color: #3b82f6;
+            margin-right: 1rem;
+        }
+
+        .tips-section {
+            background-color: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #e2e8f0;
+            border-top: 5px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-dumbbell text-2xl"></i>
+                    <h1 class="text-2xl font-bold">GymPT</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-blue-200 transition">Home</a>
+                    <a href="workout.html" class="hover:text-blue-200 transition">Workouts</a>
+                    <a href="nutrisi.html" class="hover:text-blue-200 transition">Nutrition</a>
+                    <a href="alatgym.html" class="hover:text-blue-200 transition">Equipment</a>
+                </nav>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="workout-section">
+                <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Workout Generator</h1>
+                <form id="workoutForm" class="space-y-6">
+                    <div class="space-y-4">
+                        <label class="block text-sm font-medium text-gray-700">Fitness Level</label>
+                        <select id="fitnessLevel" required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Select your fitness level</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-4">
+                        <label class="block text-sm font-medium text-gray-700">Workout Type</label>
+                        <select id="workoutType" required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Select workout type</option>
+                            <option value="strength">Strength Training</option>
+                            <option value="cardio">Cardio</option>
+                            <option value="hiit">HIIT</option>
+                            <option value="flexibility">Flexibility</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-4">
+                        <label class="block text-sm font-medium text-gray-700">Duration (minutes)</label>
+                        <input type="number" id="duration" min="15" max="120" required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div class="space-y-4">
+                        <label class="block text-sm font-medium text-gray-700">Available Equipment</label>
+                        <select id="equipment" multiple required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="none">No Equipment</option>
+                            <option value="dumbbells">Dumbbells</option>
+                            <option value="barbell">Barbell</option>
+                            <option value="resistance_bands">Resistance Bands</option>
+                            <option value="kettlebells">Kettlebells</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-4">
+                        <label class="block text-sm font-medium text-gray-700">Fitness Goals</label>
+                        <select id="goals" multiple required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="weight_loss">Weight Loss</option>
+                            <option value="muscle_gain">Muscle Gain</option>
+                            <option value="endurance">Endurance</option>
+                            <option value="flexibility">Flexibility</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                        Generate Workout
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Workout Result Modal -->
+    <div id="workoutPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+        <div class="bg-white rounded-xl p-6 max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Your Generated Workout</h2>
+                <button class="text-gray-500 hover:text-gray-700" onclick="closePopup()">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="loading" class="hidden">
+                <div class="flex flex-col items-center justify-center py-8">
+                    <div class="loading-spinner mb-4"></div>
+                    <p class="text-gray-600">Generating your personalized workout plan...</p>
+                </div>
+            </div>
+            
+            <div id="workoutResult" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('workoutForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                fitnessLevel: document.getElementById('fitnessLevel').value,
+                workoutType: document.getElementById('workoutType').value,
+                duration: document.getElementById('duration').value,
+                equipment: Array.from(document.getElementById('equipment').selectedOptions).map(option => option.value),
+                goals: Array.from(document.getElementById('goals').selectedOptions).map(option => option.value)
+            };
+
+            try {
+                // Show loading state
+                const popup = document.getElementById('workoutPopup');
+                const loading = document.getElementById('loading');
+                const result = document.getElementById('workoutResult');
+                popup.classList.remove('hidden');
+                popup.classList.add('flex');
+                loading.classList.remove('hidden');
+                result.innerHTML = '';
+
+                // Create a prompt for the AI
+                const prompt = `Generate a detailed workout plan with the following specifications:
+                - Fitness Level: ${formData.fitnessLevel}
+                - Workout Type: ${formData.workoutType}
+                - Duration: ${formData.duration} minutes
+                - Available Equipment: ${formData.equipment.join(', ')}
+                - Goals: ${formData.goals.join(', ')}
+
+                Please provide a structured workout plan in the following format:
+
+                WARM-UP (5-10 minutes):
+                [List warm-up exercises with duration/reps]
+
+                MAIN WORKOUT:
+                [List exercises with sets, reps, and rest periods]
+
+                COOL-DOWN (5-10 minutes):
+                [List cool-down exercises with duration]
+
+                TIPS & PRECAUTIONS:
+                [List important tips and precautions]
+
+                Format each section clearly and use number points for exercises. Include specific details about form, breathing, and rest periods. Please use **double asterisks** to make important terms, exercise names, or section titles bold.`;
+
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: prompt })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                displayWorkout({ workout: data.text });
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while generating the workout. Please try again.');
+            } finally {
+                // Hide loading state
+                document.getElementById('loading').classList.add('hidden');
+            }
+        });
+
+        function displayWorkout(response) {
+            const result = document.getElementById('workoutResult');
+            let workoutText = response.workout;
+            
+            // Format bold text by replacing **text** with <strong>text</strong>
+            workoutText = workoutText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+            // Split the workout text into sections
+            const sections = workoutText.split('\n\n');
+            let formattedHTML = '';
+
+            sections.forEach(section => {
+                if (section.trim()) {
+                    if (section.toUpperCase().includes('WARM-UP')) {
+                        formattedHTML += `
+                            <div class="workout-section">
+                                <h3 class="text-xl font-semibold text-blue-600 mb-4">Warm-Up</h3>
+                                <div class="space-y-3">${formatSection(section)}</div>
+                            </div>`;
+                    } else if (section.toUpperCase().includes('MAIN WORKOUT')) {
+                        formattedHTML += `
+                            <div class="workout-section">
+                                <h3 class="text-xl font-semibold text-blue-600 mb-4">Main Workout</h3>
+                                <div class="space-y-3">${formatSection(section)}</div>
+                            </div>`;
+                    } else if (section.toUpperCase().includes('COOL-DOWN')) {
+                        formattedHTML += `
+                            <div class="workout-section">
+                                <h3 class="text-xl font-semibold text-blue-600 mb-4">Cool-Down</h3>
+                                <div class="space-y-3">${formatSection(section)}</div>
+                            </div>`;
+                    } else if (section.toUpperCase().includes('TIPS')) {
+                        formattedHTML += `
+                            <div class="tips-section">
+                                <h3 class="text-xl font-semibold text-blue-600 mb-4">Tips & Precautions</h3>
+                                <div class="space-y-3">${formatSection(section)}</div>
+                            </div>`;
+                    } else {
+                        formattedHTML += `
+                            <div class="workout-section">
+                                <div class="space-y-3">${formatSection(section)}</div>
+                            </div>`;
+                    }
+                }
+            });
+
+            result.innerHTML = formattedHTML;
+        }
+
+        function formatSection(section) {
+            // Remove the section header if it exists
+            const lines = section.split('\n').filter(line => line.trim());
+            const headerIndex = lines.findIndex(line => 
+                line.toUpperCase().includes('WARM-UP') || 
+                line.toUpperCase().includes('MAIN WORKOUT') || 
+                line.toUpperCase().includes('COOL-DOWN') || 
+                line.toUpperCase().includes('TIPS')
+            );
+            
+            if (headerIndex !== -1) {
+                lines.splice(headerIndex, 1);
+            }
+
+            // Format each line
+            return lines.map(line => {
+                if (line.trim().startsWith('-') || line.trim().startsWith('•') || line.match(/^\d+\./)) {
+                    const cleanLine = line.trim().replace(/^[-•\d]+\.?\s*/, '');
+                    return `
+                        <div class="exercise-item">
+                            <i class="fas fa-dumbbell"></i>
+                            <div>${cleanLine}</div>
+                        </div>`;
+                }
+                return `<div class="text-gray-700">${line}</div>`;
+            }).join('');
+        }
+
+        function closePopup() {
+            document.getElementById('workoutPopup').classList.add('hidden');
+            document.getElementById('workoutPopup').classList.remove('flex');
+        }
+
+        // Close popup when clicking outside
+        window.addEventListener('click', function(event) {
+            const popup = document.getElementById('workoutPopup');
+            if (event.target === popup) {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>
