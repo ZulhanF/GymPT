@@ -110,12 +110,10 @@ function showTypingIndicator() {
     typingDiv.className = 'mb-4 flex justify-start';
     typingDiv.id = 'typing-indicator';
     typingDiv.innerHTML = `
-        <div class="message bot-message p-4">
-            <div class="typing-indicator">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="typing-indicator">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
     `;
     
