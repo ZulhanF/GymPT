@@ -8,10 +8,11 @@
 </div>
 
 ## 🎯 Overview
-<div style="display: flex; gap: 12px; flex-wrap: wrap;">
+<div style="display: flex; gap: 30px; flex-wrap: wrap;">
   <img width="400" alt="image1" src="https://github.com/user-attachments/assets/682704d1-3e02-4b73-86c5-f56f4f99d681" />
   <img width="400" alt="image2" src="https://github.com/user-attachments/assets/663be36c-7630-4c03-8cd2-583a0022a792" />
   <img width="400" alt="image3" src="https://github.com/user-attachments/assets/663a0ceb-cf16-4ef0-b5e8-f329d7bc4a83" />
+  <img width="400" alt="image4" src="https://github.com/user-attachments/assets/f0939cf7-4b9e-430e-8f7b-01918e63b340" />
 </div>
 
 **GymPT** is a modern, AI-powered fitness platform that provides personalized workout plans, nutrition guidance, and real-time fitness assistance. Built with cutting-edge AI technology, it offers a comprehensive solution for fitness enthusiasts of all levels.
