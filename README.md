@@ -102,8 +102,6 @@
    npm run build
    ```
 
-
-
 ## 🎯 Usage Examples
 
 ### Chat with AI Assistant
@@ -120,13 +118,6 @@ AI: "For weight loss, I recommend these cardio exercises..."
 Input: Beginner, Strength Training, 45 minutes, Dumbbells, Muscle Gain
 Output: Detailed workout plan with exercises, sets, reps, and rest periods
 ```
-
-## 🔧 Development Commands
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start dev server and open browser
-- `npm run netlify:dev` - Start Netlify dev server
 
 ## 🤝 Contributing
 
@@ -153,11 +144,6 @@ If you have any questions or need help:
 
 - **Website:** [GymPT](https://gympt.netlify.app)
 - **Issues:** [GitHub Issues](https://github.com/yourusername/gympt/issues)
-- **Email:** your-email@example.com
+- **Email:** zulhanfadil@gmail.com
 
 ---
-
-<div align="center">
-  <p>Made with ❤️ for the fitness community</p>
-  <p>Built with modern web technologies and AI</p>
-</div> 
