@@ -79,13 +79,22 @@ function addMessage(text, sender) {
     const chatContainer = document.getElementById('chat-container');
     if (!chatContainer) return;
 
+    // Format the text - convert markdown-like formatting
+    let formattedText = text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\n/g, '<br>')
+        .replace(/- (.*)/g, '• $1');
+
     const messageDiv = document.createElement('div');
     messageDiv.className = `mb-4 flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
     
     const messageClass = sender === 'user' ? 'user-message' : 'bot-message';
+    const maxWidth = sender === 'user' ? 'max-w-xs' : 'max-w-md';
+    
     messageDiv.innerHTML = `
-        <div class="message ${messageClass} p-4 max-w-xs">
-            <p>${text}</p>
+        <div class="message ${messageClass} p-4 ${maxWidth}">
+            <div class="whitespace-pre-line">${formattedText}</div>
         </div>
     `;
     
@@ -229,13 +238,7 @@ function displayWorkout(response) {
     
     // Clean up any remaining asterisks and format text properly
     workoutText = workoutText
-        // Replace **text** with <strong>text</strong>
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        // Replace any remaining single asterisks with nothing
-        .replace(/\*/g, '')
-        // Clean up any extra spaces
-        .replace(/\s+/g, ' ')
-        .trim();
+    workoutText = workoutText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
     // Split the workout text into sections
     const sections = workoutText.split('\n\n');

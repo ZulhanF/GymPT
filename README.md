@@ -53,10 +53,15 @@ GymPT/
 │   ├── workout.html         # Workout generator page
 │   ├── nutrisi.html         # Nutrition page
 │   └── alatgym.html         # Equipment page
+├── netlify/
+│   └── functions/
+│       ├── chat.js          # AI API function
+│       └── package.json     # Function dependencies
 ├── dist/                    # Built files (generated)
 ├── webpack.config.js        # Webpack configuration
 ├── package.json             # Dependencies and scripts
-└── netlify.toml            # Netlify deployment config
+├── netlify.toml            # Netlify deployment config
+└── README.md               # Project documentation
 ```
 
 ## Deployment to Netlify
